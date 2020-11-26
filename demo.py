@@ -1,5 +1,6 @@
 import random
 import string
+import math
 
 # 生成随机字符串
 def get_random_str():
