@@ -2,6 +2,7 @@ from util import util
 from selenium import webdriver
 from testcase import testcase1
 from testcase.basic.test_user_register import TestUserRegister
+from testcase.basic.test_user_download import TestUserDownload
 
 
 if __name__ == '__main__':
@@ -11,9 +12,11 @@ if __name__ == '__main__':
     # driver.get('http://localhost:8080/jpress/user/register')
     # util.get_code(driver, 'captchaimg')
 
-    register = TestUserRegister()
-    register.test_register_code_error()
-    register.test_register_ok()
+    # register = TestUserRegister()
+    # register.test_register_code_error()
+    # register.test_register_ok()
 
-
+    download = TestUserDownload()
+    download.test_download_pwd_error()
+    download.test_download_user_error()
 
