@@ -17,6 +17,6 @@ if __name__ == '__main__':
     # register.test_register_ok()
 
     download = TestUserDownload()
-    download.test_download_pwd_error()
-    download.test_download_user_error()
+    download.test_user_login_error()
+    download.test_user_login_success()
 
