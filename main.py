@@ -3,6 +3,8 @@ from selenium import webdriver
 from testcase import testcase1
 from testcase.basic.test_user_register import TestUserRegister
 from testcase.basic.test_user_download import TestUserDownload
+from testcase.basic.test__category import TestCategory
+from testcase.basic.test_admin_login import TestAdminLogin
 
 
 if __name__ == '__main__':
@@ -20,3 +22,8 @@ if __name__ == '__main__':
     download.test_user_login_error()
     download.test_user_login_success()
 
+    #category测试
+    # login = TestAdminLogin()
+    # login.test_admin_login_ok()
+    # category = TestCategory(login)
+    # category.test_add_category_error()

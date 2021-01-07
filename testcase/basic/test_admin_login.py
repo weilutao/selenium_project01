@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
 
-class TestUserDownload(object):
+class TestAdminLogin(object):
     def __init__(self):
         self.driver = webdriver.Chrome()
         self.driver.maximize_window()
@@ -71,3 +71,7 @@ class TestUserDownload(object):
         sleep(5)
 
         self.driver.quit()
+
+    def test_admin_login_ok(self):
+        '''为登录成功用例'''
+        None
