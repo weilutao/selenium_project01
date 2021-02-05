@@ -10,7 +10,7 @@ import time
 class OA_Course(object):
     def __init__(self):
         self.driver = webdriver.Chrome()
-        self.driver.get('https://iss.bell.ai/web-login.html')
+        self.driver.get('')
         self.driver.maximize_window()
 
     def close_driver(self):
@@ -19,8 +19,8 @@ class OA_Course(object):
 
     def loading(self):
         '''登录'''
-        self.driver.find_element_by_xpath('/html/body/div/div[2]/div/div/div[1]/div/form/div[1]/div/div/input').send_keys('18312840013')
-        self.driver.find_element_by_xpath('/html/body/div/div[2]/div/div/div[1]/div/form/div[2]/div/div/input').send_keys('123456789')
+        self.driver.find_element_by_xpath('/html/body/div/div[2]/div/div/div[1]/div/form/div[1]/div/div/input').send_keys('')
+        self.driver.find_element_by_xpath('/html/body/div/div[2]/div/div/div[1]/div/form/div[2]/div/div/input').send_keys('')
         self.driver.find_element_by_xpath('/html/body/div/div[2]/div/div/div[1]/div/div[2]/button').click()
 
     def select_class(self):
