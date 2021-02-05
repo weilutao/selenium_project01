@@ -34,7 +34,7 @@ class OA_Course(object):
 
     def course_scheduling(self):
         '''排课'''
-        # try:
+        sleep(2)
         WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, '//div[5]/button[3]/span[contains(text(), "单节排课")]'))).click()
         WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="foobar"]/div/div/input'))).click()
         # 选择上课日期
@@ -47,17 +47,28 @@ class OA_Course(object):
         # print(type(current_time), current_time)
         WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/div[3]/div[2]/div/form/div[1]/div[2]/div/div/div[3]/div[2]/div/div/div/input'))).click()
         # 定位下拉框
-        x_path = "'" + '//*[contains(text(), "{0}")]'.format(current_time) + "'"
-        print(type(x_path), x_path)
-        # sleep(5)
-        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.XPATH, '//*[contains(text(), "19:30")]'))).click()
-        # u1.find_element_by_xpath("//*[contains(text(), 08:00)]").click()
-        # sleep(5)
+        # x_path = "//div[contains(text(), '%s')]" % current_time
+        # print(type(x_path), x_path)
+        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.XPATH, "//div[contains(text(), '%s')]" %current_time))).click()
         # 选择课时类型
         WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/div[3]/div[2]/div/form/div[1]/div[2]/div/div/div[4]/div[1]/div/div/div/div[2]/input'))).click()
         WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.XPATH, '//*[contains(text(), "机器人大赛")]'))).click()
-        # except Exception as e:
-        #     print(e)
+        # 选择上课时长
+        WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH,'/html/body/div[1]/div[3]/div[2]/div/form/div[1]/div[2]/div/div/div[4]/div[2]/div/div/div/div[1]/input'))).click()
+        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.XPATH, "//span[contains(text(), '30分钟')]"))).click()
+        # 选择课程种类
+        WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH,'/html/body/div[1]/div[3]/div[2]/div/form/div[2]/div[2]/div/div/div/div[1]/div[2]/div/div/div[1]/input'))).click()
+        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[8]/div/div[1]/ul/li[1]'))).click()
+        # 选择课程小类
+        WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/div[3]/div[2]/div/form/div[2]/div[2]/div/div/div/div[1]/div[3]/div/div/div[1]/input'))).click()
+        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[9]/div/div[1]/ul/li[1]'))).click()
+        try:
+            # 选择课程
+            WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/div[3]/div[2]/div/form/div[2]/div[2]/div/div/div/div[2]/div/div/div/div[1]/label/span[2]'))).click()
+            # 点击保存
+            WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/div[3]/div[2]/div/form/div[3]/button[1]'))).click()
+        except Exception as e:
+            print("错误的原因：", repr(e))
 
 
 if __name__ == '__main__':
