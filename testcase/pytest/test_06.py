@@ -48,6 +48,5 @@ def teardown_function():
     print('teardown_function')
 
 
-
 if __name__ == '__main__':
     pytest.main(['-vs', 'test_06.py'])
