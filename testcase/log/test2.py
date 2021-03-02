@@ -1,11 +1,11 @@
 import logging
 
-my_format = '%(asctime)s'
+my_format = '%(asctime)s-%(levelname)s-%(message)s'
 
 logging.basicConfig(
-    filename = 'logs/my.log',
-    level = logging.INFO,
-    format = my_format
+    filename='E:/selenium_project01/logs/my.log',
+    level=logging.INFO,
+    format=my_format
 )
 
 logging.debug('debug')
