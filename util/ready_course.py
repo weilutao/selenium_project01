@@ -6,7 +6,6 @@ from selenium.webdriver.common.by import By
 import time
 
 
-
 class OA_Course(object):
     def __init__(self):
         self.driver = webdriver.Chrome()
@@ -24,14 +23,18 @@ class OA_Course(object):
         self.driver.find_element_by_xpath('/html/body/div/div[2]/div/div/div[1]/div/div[2]/button').click()
 
     def select_class(self):
-        name = '魏禄涛'
-        try:
-            WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/div[2]/ul[1]/li[4]/div'))).click()
-            sleep(1)
-            WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.PARTIAL_LINK_TEXT, '中心班级列表'))).click()
-            WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, "//button/span[contains(text(),'%s')]" % name))).click()
-        except Exception as e:
-            print(e)
+        name = '魏禄涛 数学'
+        WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/div[2]/ul[1]/li[4]/div'))).click()
+        sleep(1)
+        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.PARTIAL_LINK_TEXT, '中心班级列表'))).click()
+
+        while True:
+            try:
+                WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, "//button/span[contains(text(),'%s')]" % name))).click()
+            except Exception as e:
+                WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div[3]/div[2]/div/div[3]/div/button[2]"))).click()
+            else:
+                return True
 
     def course_scheduling(self):
         '''排课'''
