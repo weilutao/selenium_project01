@@ -9,4 +9,4 @@ rt_handler = logging.handlers.TimedRotatingFileHandler('all.log', when='mignight
                                                        atTime=datetime.time(0, 0, 0, 0))
 rt_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
 
-f_handler =
+
