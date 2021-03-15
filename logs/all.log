@@ -1,0 +1,15 @@
+2021-03-13 15:51:54,397 - DEBUG - debug message
+2021-03-13 15:51:54,398 - INFO - info message
+2021-03-13 15:51:54,398 - WARNING - warning message
+2021-03-13 15:51:54,398 - ERROR - error message
+2021-03-13 15:51:54,398 - CRITICAL - critical message
+2021-03-13 15:52:19,131 - DEBUG - debug message
+2021-03-13 15:52:19,131 - INFO - info message
+2021-03-13 15:52:19,131 - WARNING - warning message
+2021-03-13 15:52:19,131 - ERROR - error message
+2021-03-13 15:52:19,132 - CRITICAL - critical message
+2021-03-13 20:10:37,263 - DEBUG - debug message
+2021-03-13 20:10:37,264 - INFO - info message
+2021-03-13 20:10:37,264 - WARNING - warning message
+2021-03-13 20:10:37,264 - ERROR - error message
+2021-03-13 20:10:37,264 - CRITICAL - critical message

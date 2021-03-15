@@ -28,6 +28,7 @@ def get_code(driver, id):
     right_x = em.size['width'] + left_x
     right_y = em.size['height'] + left_y
 
+    # 获取当前win设备的像素ratio
     dpr = driver.execute_script('return window.devicePixelRatio')
     # print(dpr)
 
@@ -59,6 +60,32 @@ def get_random_str():
     '''
     code_str = ''.join(random.sample(string.ascii_letters + string.digits, 8))
     return code_str
+
+def get_logger():
+    '''
+    :return: 获取日志
+    '''
+    import logging
+    import logging.handlers
+    import datetime
+
+    # 初始化过程
+    logger = logging.getLogger('mylogger')
+    logger.setLevel(logging.DEBUG)
+
+    rf_handler = logging.handlers.TimedRotatingFileHandler('C:/python3.7.0/selenium_project01/logs/all.log',
+                                                           when='midnight', backupCount=7,
+                                                           atTime=datetime.time(0, 0, 0, 0))
+    rf_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+
+    f_handler = logging.FileHandler('C:/python3.7.0/selenium_project01/logs/error.log')
+    f_handler.setLevel(logging.ERROR)
+    f_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(filename)s[:%(lineno)d] - %(message)s"))
+
+    logger.addHandler(rf_handler)
+    logger.addHandler(f_handler)
+
+    return logger
 
 
 # 为测试方便使用

@@ -1,0 +1,6 @@
+2021-03-13 15:51:54,398 - ERROR - test3.py[:22] - error message
+2021-03-13 15:51:54,398 - CRITICAL - test3.py[:23] - critical message
+2021-03-13 15:52:19,131 - ERROR - test3.py[:22] - error message
+2021-03-13 15:52:19,132 - CRITICAL - test3.py[:23] - critical message
+2021-03-13 20:10:37,264 - ERROR - test3.py[:27] - error message
+2021-03-13 20:10:37,264 - CRITICAL - test3.py[:28] - critical message
