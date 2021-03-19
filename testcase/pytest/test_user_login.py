@@ -1,4 +1,4 @@
-
+import pytest
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
@@ -6,10 +6,15 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 class TestUserDownload(object):
-    def __init__(self):
-        self.driver = webdriver.Chrome()
-        self.driver.maximize_window()
-        self.driver.get('http://localhost:8080/jpress/user/login')
+    @classmethod
+    def setup_class(cls):
+        cls.driver = webdriver.Chrome()
+        cls.driver.maximize_window()
+        cls.driver.get('http://localhost:8080/jpress/user/login')
+
+    @classmethod
+    def teardown_class(cls):
+        cls.driver.quit()
 
     def clear_n(self):
         self.driver.find_element_by_name('user').clear()
@@ -58,4 +63,5 @@ class TestUserDownload(object):
             print('test_user_login_success:bug')
         sleep(5)
 
-        self.driver.quit()
+if __name__ == '__main__':
+    pytest.main('test_user_login.py')
