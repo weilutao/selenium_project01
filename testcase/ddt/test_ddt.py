@@ -29,7 +29,7 @@ class MyTestCase(unittest.TestCase):
     def test4(self, value):
         print(value)
 
-    
+
 
 if __name__ == '__main__':
     unittest.main
