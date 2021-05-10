@@ -41,3 +41,6 @@ class UserRegisterPage(BasePage):
     def click_register_btn(self):
         self.click(*self.register_btn)
         sleep(2)
+
+if __name__ == '__main__':
+    pass
