@@ -1,5 +1,6 @@
 import pytest
 import allure
+import os
 
 
 # 测试之前先登录
@@ -38,7 +39,9 @@ if __name__ == '__main__':
         pytest --alluredir ./reports test_07.py
         allure serve ./reports 启动allure 查看报告
     '''
-    pytest.main(['--alluredir', './reports', 'test_07.py'])
+    pytest.main()
+    # os.system('allure generate -o E:/selenium_project01/reports --clean')
+    # os.system('allure open E:/selenium_project01/reports')
 
 
 
