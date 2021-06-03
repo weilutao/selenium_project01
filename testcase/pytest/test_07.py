@@ -39,8 +39,8 @@ if __name__ == '__main__':
         pytest --alluredir ./reports test_07.py
         allure serve ./reports 启动allure 查看报告
     '''
-    pytest.main()
-    # os.system('allure generate -o E:/selenium_project01/reports --clean')
+    pytest.main(['-vs', 'test_07.py', '--alluredir=./temp'])
+    os.system('allure generate ./temp -o E:/selenium_project01/reports --clean')
     # os.system('allure open E:/selenium_project01/reports')
 
 
