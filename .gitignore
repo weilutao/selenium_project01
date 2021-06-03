@@ -4,7 +4,6 @@ testcase/pytest/temp/
 
 
 .idea/
-testcase/pytest/.pytest_cache/
 testcase/pytest/__pycache__/
 
 .pytest_cache/
